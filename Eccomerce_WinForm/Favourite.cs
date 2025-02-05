@@ -48,30 +48,31 @@ namespace Presentation
 
         private void Button_Fav_Click(object sender, EventArgs e)
         {
-            var data = FavouriteServices.DeleteProductFavourite(userId,productid);
-            if (data>0)
-            {
-                MessageBox.Show("Product Deleted from Fav Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Text_product.Text = "";
-                Text_Category.Text = "";
-                
-                var DeletedFat = FavouriteServices.getFavProduct(userId);
-                dgv.DataSource = data;
+                var data = FavouriteServices.DeleteProductFavourite(userId, productid);
+                if (data > 0)
+                {
+                    MessageBox.Show("Product Deleted from Fav Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Text_product.Text = "";
 
-            }
-            else
-            {
-                MessageBox.Show("Error.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+                    var DeletedFat = FavouriteServices.getFavProduct(userId);
+                    dgv.DataSource = data;
+
+                }
+                else
+                {
+                    MessageBox.Show("Error.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            
         }
         int productid;
         private void dgv_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 
-            productid = (int)dgv.SelectedRows[0].Cells["Prod_Id"].Value;
-            var productData = product.getOneProduct(productid);
-            Text_product.Text = productData.Rows[0]["Prod_Name"].ToString();
-            Text_Category.Text = productData.Rows[0]["Ctg_Name"].ToString();
+            productid = (int)dgv.SelectedRows[0].Cells["ProductId"].Value;
+           
+            Text_product.Text = dgv.SelectedRows[0].Cells[1].Value.ToString();
+
         }
     }
 }

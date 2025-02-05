@@ -23,7 +23,17 @@ namespace Presentation
         {
             this.Hide();
             new Login().Show();
-        
+
+        }
+
+        private void Intro_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

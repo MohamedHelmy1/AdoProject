@@ -70,7 +70,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.BackColor = Color.DarkRed;
+            splitContainer1.Panel2.BackColor = Color.Gray;
             splitContainer1.Panel2.Controls.Add(numericUpDown_price);
             splitContainer1.Panel2.Controls.Add(btn_Delete);
             splitContainer1.Panel2.Controls.Add(btn_Edit);
@@ -92,10 +92,10 @@
             btn_logout.FlatStyle = FlatStyle.Flat;
             btn_logout.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btn_logout.ForeColor = Color.DarkRed;
-            btn_logout.Location = new Point(10, 237);
+            btn_logout.Location = new Point(10, 464);
             btn_logout.Margin = new Padding(3, 2, 3, 2);
             btn_logout.Name = "btn_logout";
-            btn_logout.Size = new Size(82, 22);
+            btn_logout.Size = new Size(82, 53);
             btn_logout.TabIndex = 2;
             btn_logout.Text = "Logout";
             btn_logout.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             btn_Catigory.Location = new Point(10, 142);
             btn_Catigory.Margin = new Padding(3, 2, 3, 2);
             btn_Catigory.Name = "btn_Catigory";
-            btn_Catigory.Size = new Size(82, 22);
+            btn_Catigory.Size = new Size(82, 47);
             btn_Catigory.TabIndex = 1;
             btn_Catigory.Text = "Catigory";
             btn_Catigory.UseVisualStyleBackColor = true;
@@ -121,11 +121,11 @@
             btn_Products.FlatAppearance.BorderSize = 0;
             btn_Products.FlatStyle = FlatStyle.Flat;
             btn_Products.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btn_Products.ForeColor = Color.DarkRed;
+            btn_Products.ForeColor = Color.Red;
             btn_Products.Location = new Point(10, 73);
             btn_Products.Margin = new Padding(3, 2, 3, 2);
             btn_Products.Name = "btn_Products";
-            btn_Products.Size = new Size(82, 22);
+            btn_Products.Size = new Size(82, 37);
             btn_Products.TabIndex = 0;
             btn_Products.Text = "Products";
             btn_Products.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             numericUpDown_price.Margin = new Padding(3, 2, 3, 2);
             numericUpDown_price.Name = "numericUpDown_price";
             numericUpDown_price.PlaceholderText = "Price";
-            numericUpDown_price.Size = new Size(169, 16);
+            numericUpDown_price.Size = new Size(208, 16);
             numericUpDown_price.TabIndex = 12;
             // 
             // btn_Delete
@@ -230,7 +230,7 @@
             comboBox_Category.Location = new Point(173, 166);
             comboBox_Category.Margin = new Padding(3, 2, 3, 2);
             comboBox_Category.Name = "comboBox_Category";
-            comboBox_Category.Size = new Size(169, 23);
+            comboBox_Category.Size = new Size(208, 23);
             comboBox_Category.TabIndex = 5;
             comboBox_Category.SelectedIndexChanged += comboBox_Category_SelectedIndexChanged;
             // 

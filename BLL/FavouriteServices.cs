@@ -23,11 +23,20 @@ namespace BLL
         }
         public int DeleteProductFavourite(int User_Id, int Prod_Id)
         {
-            return db.ExecuteNoQuery($"DELETE FROM Favorites WHERE UserId = {User_Id} AND ProductId {Prod_Id}");
+            return db.ExecuteNoQuery($"DELETE FROM Favorites WHERE UserId = {User_Id} AND ProductId = {Prod_Id}");
         }
         public DataTable getFavProduct(int Useer_Id)
         {
             return db.ExecuteQuery($"SELECT P.ProductId, P.ProductName, P.Price, C.CategoryName  FROM Favorites F JOIN Products P ON F.ProductId = P.ProductId JOIN Categories C ON P.CategoryId = C.CategoryId WHERE F.UserId = {Useer_Id}");
+        }
+        public bool CheckFavProduct(int Useer_Id, int productId)
+        {
+            var data = db.ExecuteQuery($"select * from Favorites where ProductId={productId} and UserId={Useer_Id}");
+            if (data == null || data.Rows.Count == 0)
+            {
+                return false;
+            }
+            return true;
         }
 
     }

@@ -33,8 +33,6 @@
             btn_logout = new Button();
             btn_Catigory = new Button();
             btn_Products = new Button();
-            textBox_Descreption = new TextBox();
-            label2 = new Label();
             btn_Delete = new Button();
             btn_Edit = new Button();
             btn_Add = new Button();
@@ -52,6 +50,7 @@
             // 
             splitContainer1.Dock = DockStyle.Fill;
             splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Margin = new Padding(3, 2, 3, 2);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -62,9 +61,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.BackColor = Color.DarkRed;
-            splitContainer1.Panel2.Controls.Add(textBox_Descreption);
-            splitContainer1.Panel2.Controls.Add(label2);
+            splitContainer1.Panel2.BackColor = Color.Gray;
             splitContainer1.Panel2.Controls.Add(btn_Delete);
             splitContainer1.Panel2.Controls.Add(btn_Edit);
             splitContainer1.Panel2.Controls.Add(btn_Add);
@@ -72,8 +69,8 @@
             splitContainer1.Panel2.Controls.Add(textBox_name);
             splitContainer1.Panel2.Controls.Add(dataGridView1);
             splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint_1;
-            splitContainer1.Size = new Size(579, 750);
-            splitContainer1.SplitterDistance = 120;
+            splitContainer1.Size = new Size(504, 562);
+            splitContainer1.SplitterDistance = 104;
             splitContainer1.TabIndex = 1;
             // 
             // btn_logout
@@ -82,9 +79,10 @@
             btn_logout.FlatStyle = FlatStyle.Flat;
             btn_logout.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btn_logout.ForeColor = Color.DarkRed;
-            btn_logout.Location = new Point(12, 334);
+            btn_logout.Location = new Point(10, 426);
+            btn_logout.Margin = new Padding(3, 2, 3, 2);
             btn_logout.Name = "btn_logout";
-            btn_logout.Size = new Size(94, 29);
+            btn_logout.Size = new Size(82, 86);
             btn_logout.TabIndex = 2;
             btn_logout.Text = "Logout";
             btn_logout.UseVisualStyleBackColor = true;
@@ -95,10 +93,11 @@
             btn_Catigory.FlatAppearance.BorderSize = 0;
             btn_Catigory.FlatStyle = FlatStyle.Flat;
             btn_Catigory.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btn_Catigory.ForeColor = Color.DarkRed;
-            btn_Catigory.Location = new Point(12, 153);
+            btn_Catigory.ForeColor = Color.Red;
+            btn_Catigory.Location = new Point(10, 115);
+            btn_Catigory.Margin = new Padding(3, 2, 3, 2);
             btn_Catigory.Name = "btn_Catigory";
-            btn_Catigory.Size = new Size(94, 29);
+            btn_Catigory.Size = new Size(82, 56);
             btn_Catigory.TabIndex = 1;
             btn_Catigory.Text = "Catigory";
             btn_Catigory.UseVisualStyleBackColor = true;
@@ -109,32 +108,14 @@
             btn_Products.FlatStyle = FlatStyle.Flat;
             btn_Products.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btn_Products.ForeColor = Color.DarkRed;
-            btn_Products.Location = new Point(12, 64);
+            btn_Products.Location = new Point(10, 48);
+            btn_Products.Margin = new Padding(3, 2, 3, 2);
             btn_Products.Name = "btn_Products";
-            btn_Products.Size = new Size(94, 29);
+            btn_Products.Size = new Size(82, 50);
             btn_Products.TabIndex = 0;
             btn_Products.Text = "Products";
             btn_Products.UseVisualStyleBackColor = true;
             btn_Products.Click += btn_Products_Click;
-            // 
-            // textBox_Descreption
-            // 
-            textBox_Descreption.Location = new Point(170, 149);
-            textBox_Descreption.Name = "textBox_Descreption";
-            textBox_Descreption.PlaceholderText = "Descreption";
-            textBox_Descreption.Size = new Size(219, 27);
-            textBox_Descreption.TabIndex = 13;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Arial", 10.2F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(47, 153);
-            label2.Name = "label2";
-            label2.Size = new Size(104, 19);
-            label2.TabIndex = 12;
-            label2.Text = "Descreption";
             // 
             // btn_Delete
             // 
@@ -144,9 +125,10 @@
             btn_Delete.FlatAppearance.CheckedBackColor = Color.DarkRed;
             btn_Delete.Font = new Font("Arial", 10.8F, FontStyle.Bold);
             btn_Delete.ForeColor = Color.DarkRed;
-            btn_Delete.Location = new Point(289, 312);
+            btn_Delete.Location = new Point(253, 234);
+            btn_Delete.Margin = new Padding(3, 2, 3, 2);
             btn_Delete.Name = "btn_Delete";
-            btn_Delete.Size = new Size(100, 29);
+            btn_Delete.Size = new Size(88, 22);
             btn_Delete.TabIndex = 11;
             btn_Delete.Text = "Delete";
             btn_Delete.UseVisualStyleBackColor = false;
@@ -160,9 +142,10 @@
             btn_Edit.FlatAppearance.CheckedBackColor = Color.DarkRed;
             btn_Edit.Font = new Font("Arial", 10.8F, FontStyle.Bold);
             btn_Edit.ForeColor = Color.DarkRed;
-            btn_Edit.Location = new Point(51, 312);
+            btn_Edit.Location = new Point(45, 234);
+            btn_Edit.Margin = new Padding(3, 2, 3, 2);
             btn_Edit.Name = "btn_Edit";
-            btn_Edit.Size = new Size(100, 29);
+            btn_Edit.Size = new Size(88, 22);
             btn_Edit.TabIndex = 10;
             btn_Edit.Text = "Edit";
             btn_Edit.UseVisualStyleBackColor = false;
@@ -176,9 +159,10 @@
             btn_Add.FlatAppearance.CheckedBackColor = Color.DarkRed;
             btn_Add.Font = new Font("Arial", 10.8F, FontStyle.Bold);
             btn_Add.ForeColor = Color.DarkRed;
-            btn_Add.Location = new Point(170, 312);
+            btn_Add.Location = new Point(149, 234);
+            btn_Add.Margin = new Padding(3, 2, 3, 2);
             btn_Add.Name = "btn_Add";
-            btn_Add.Size = new Size(97, 29);
+            btn_Add.Size = new Size(85, 22);
             btn_Add.TabIndex = 9;
             btn_Add.Text = "Add";
             btn_Add.UseVisualStyleBackColor = false;
@@ -189,9 +173,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 10.2F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(47, 70);
+            label1.Location = new Point(45, 114);
             label1.Name = "label1";
-            label1.Size = new Size(53, 19);
+            label1.Size = new Size(46, 16);
             label1.TabIndex = 6;
             label1.Text = "Name";
             label1.Click += label1_Click;
@@ -199,10 +183,11 @@
             // textBox_name
             // 
             textBox_name.BorderStyle = BorderStyle.None;
-            textBox_name.Location = new Point(170, 69);
+            textBox_name.Location = new Point(148, 115);
+            textBox_name.Margin = new Padding(3, 2, 3, 2);
             textBox_name.Name = "textBox_name";
             textBox_name.PlaceholderText = "Category Name";
-            textBox_name.Size = new Size(219, 20);
+            textBox_name.Size = new Size(198, 16);
             textBox_name.TabIndex = 3;
             textBox_name.TextChanged += textBox_name_TextChanged;
             // 
@@ -210,21 +195,23 @@
             // 
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(47, 410);
+            dataGridView1.Location = new Point(41, 308);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(342, 272);
+            dataGridView1.Size = new Size(299, 204);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.RowHeaderMouseDoubleClick += dataGridView1_RowHeaderMouseDoubleClick;
             // 
             // Admin_Category
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(579, 750);
+            ClientSize = new Size(504, 562);
             Controls.Add(splitContainer1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Admin_Category";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin_Category";

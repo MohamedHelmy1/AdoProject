@@ -28,44 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             btn_getStarted = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-         //   pictureBox1.Image = Properties.Resources.IMAGE;
-            pictureBox1.Location = new Point(109, 69);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(362, 345);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(232, 481);
+            label1.Location = new Point(192, 115);
             label1.Name = "label1";
-            label1.Size = new Size(120, 40);
+            label1.Size = new Size(116, 32);
             label1.TabIndex = 1;
-            label1.Text = "Enjoy ";
+            label1.Text = "welcom";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(189, 539);
+            label2.Location = new Point(146, 237);
             label2.Name = "label2";
-            label2.Size = new Size(185, 40);
+            label2.Size = new Size(194, 32);
             label2.TabIndex = 2;
-            label2.Text = "Your Food";
+            label2.Text = "In Eccomerce";
+            label2.Click += label2_Click;
             // 
             // btn_getStarted
             // 
@@ -74,9 +63,10 @@
             btn_getStarted.FlatStyle = FlatStyle.Popup;
             btn_getStarted.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_getStarted.ForeColor = Color.DarkRed;
-            btn_getStarted.Location = new Point(189, 620);
+            btn_getStarted.Location = new Point(165, 465);
+            btn_getStarted.Margin = new Padding(3, 2, 3, 2);
             btn_getStarted.Name = "btn_getStarted";
-            btn_getStarted.Size = new Size(185, 38);
+            btn_getStarted.Size = new Size(162, 28);
             btn_getStarted.TabIndex = 3;
             btn_getStarted.Text = "Get Started";
             btn_getStarted.UseVisualStyleBackColor = false;
@@ -84,26 +74,24 @@
             // 
             // Intro
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkRed;
-            ClientSize = new Size(579, 750);
+            BackColor = Color.Silver;
+            ClientSize = new Size(507, 562);
             Controls.Add(btn_getStarted);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Intro";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Intro";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Load += Intro_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
         private Button btn_getStarted;

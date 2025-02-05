@@ -16,11 +16,15 @@ namespace Presentation
     public partial class Login : Form
     {
         private readonly UsersServices userService;
+        private readonly Product_Services productService;
+        private readonly CatogeryServices categoryService;
 
         public Login()
         {
             InitializeComponent();
             userService = new UsersServices();
+            productService = new Product_Services();
+            categoryService = new CatogeryServices();
             btn_login.Click += (s, e) => HandleEmail(text_email.Text, text_Passowrd.Text);
         }
 
@@ -50,7 +54,7 @@ namespace Presentation
                 {
                     MessageBox.Show("Welcome, Admin!", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
-                    new Admin().Show();
+                    new Admin(productService, categoryService).Show();
                 }
                 else if (userRole.Contains("User"))
                 {
@@ -84,6 +88,11 @@ namespace Presentation
         {
             this.Hide();
             new RegisterForm(userService).Show();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

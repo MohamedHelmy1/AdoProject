@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -40,7 +42,6 @@
             text_Passowrd = new TextBox();
             text_email = new TextBox();
             label1 = new Label();
-            guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,36 +58,52 @@
             panel1.Controls.Add(btn_login);
             panel1.Controls.Add(text_Passowrd);
             panel1.Controls.Add(text_email);
-            panel1.Location = new Point(126, 138);
+            panel1.Location = new Point(110, 104);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(343, 486);
+            panel1.Size = new Size(300, 364);
             panel1.TabIndex = 0;
+            // 
+            // guna2ImageButton1
+            // 
+            guna2ImageButton1.CheckedState.ImageSize = new Size(64, 64);
+            guna2ImageButton1.HoverState.ImageSize = new Size(64, 64);
+            guna2ImageButton1.Image = (Image)resources.GetObject("guna2ImageButton1.Image");
+            guna2ImageButton1.ImageOffset = new Point(0, 0);
+            guna2ImageButton1.ImageRotate = 0F;
+            guna2ImageButton1.Location = new Point(70, 2);
+            guna2ImageButton1.Margin = new Padding(3, 2, 3, 2);
+            guna2ImageButton1.Name = "guna2ImageButton1";
+            guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
+            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2ImageButton1.Size = new Size(158, 65);
+            guna2ImageButton1.TabIndex = 2;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(157, 337);
+            label5.Location = new Point(137, 253);
             label5.Name = "label5";
-            label5.Size = new Size(31, 18);
+            label5.Size = new Size(24, 15);
             label5.TabIndex = 9;
             label5.Text = "OR";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(50, 328);
+            label4.Location = new Point(44, 246);
             label4.Name = "label4";
-            label4.Size = new Size(109, 20);
+            label4.Size = new Size(90, 15);
             label4.TabIndex = 8;
             label4.Text = " ________________";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(185, 328);
+            label3.Location = new Point(162, 246);
             label3.Name = "label3";
-            label3.Size = new Size(109, 20);
+            label3.Size = new Size(90, 15);
             label3.TabIndex = 7;
             label3.Text = " ________________";
             label3.Click += label3_Click;
@@ -95,9 +112,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(50, 409);
+            label2.Location = new Point(44, 307);
             label2.Name = "label2";
-            label2.Size = new Size(161, 17);
+            label2.Size = new Size(134, 15);
             label2.TabIndex = 6;
             label2.Text = "Don't have an account?";
             // 
@@ -107,9 +124,9 @@
             link_SignUp.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             link_SignUp.LinkBehavior = LinkBehavior.HoverUnderline;
             link_SignUp.LinkColor = Color.DarkRed;
-            link_SignUp.Location = new Point(206, 407);
+            link_SignUp.Location = new Point(180, 305);
             link_SignUp.Name = "link_SignUp";
-            link_SignUp.Size = new Size(65, 19);
+            link_SignUp.Size = new Size(55, 16);
             link_SignUp.TabIndex = 5;
             link_SignUp.TabStop = true;
             link_SignUp.Text = "Sign up";
@@ -121,9 +138,9 @@
             linkLabel2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabel2.LinkBehavior = LinkBehavior.HoverUnderline;
             linkLabel2.LinkColor = Color.DarkRed;
-            linkLabel2.Location = new Point(90, 290);
+            linkLabel2.Location = new Point(79, 218);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(141, 19);
+            linkLabel2.Size = new Size(122, 16);
             linkLabel2.TabIndex = 4;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Forget Password?";
@@ -133,19 +150,21 @@
             btn_login.BackColor = Color.DarkRed;
             btn_login.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_login.ForeColor = Color.White;
-            btn_login.Location = new Point(76, 230);
+            btn_login.Location = new Point(66, 172);
+            btn_login.Margin = new Padding(3, 2, 3, 2);
             btn_login.Name = "btn_login";
-            btn_login.Size = new Size(168, 42);
+            btn_login.Size = new Size(147, 32);
             btn_login.TabIndex = 2;
             btn_login.Text = "Login";
             btn_login.UseVisualStyleBackColor = false;
             // 
             // text_Passowrd
             // 
-            text_Passowrd.Location = new Point(50, 170);
+            text_Passowrd.Location = new Point(44, 128);
+            text_Passowrd.Margin = new Padding(3, 2, 3, 2);
             text_Passowrd.Name = "text_Passowrd";
             text_Passowrd.PlaceholderText = "Enter password";
-            text_Passowrd.Size = new Size(221, 27);
+            text_Passowrd.Size = new Size(194, 23);
             text_Passowrd.TabIndex = 1;
             text_Passowrd.UseSystemPasswordChar = true;
             // 
@@ -153,10 +172,11 @@
             // 
             text_email.Cursor = Cursors.IBeam;
             text_email.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            text_email.Location = new Point(50, 105);
+            text_email.Location = new Point(44, 79);
+            text_email.Margin = new Padding(3, 2, 3, 2);
             text_email.Name = "text_email";
             text_email.PlaceholderText = "Enter email";
-            text_email.Size = new Size(221, 30);
+            text_email.Size = new Size(194, 26);
             text_email.TabIndex = 0;
             text_email.TextChanged += textBox1_TextChanged;
             // 
@@ -164,39 +184,28 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(206, 21);
+            label1.ForeColor = Color.Snow;
+            label1.Location = new Point(180, 16);
             label1.Name = "label1";
-            label1.Size = new Size(192, 70);
+            label1.Size = new Size(153, 56);
             label1.TabIndex = 1;
-            label1.Text = "Lig In";
-            // 
-            // guna2ImageButton1
-            // 
-            guna2ImageButton1.CheckedState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.HoverState.ImageSize = new Size(64, 64);
-           // guna2ImageButton1.Image = Properties.Resources.burger1;
-            guna2ImageButton1.ImageOffset = new Point(0, 0);
-            guna2ImageButton1.ImageRotate = 0F;
-            guna2ImageButton1.Location = new Point(80, 3);
-            guna2ImageButton1.Name = "guna2ImageButton1";
-            guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2ImageButton1.Size = new Size(181, 87);
-            guna2ImageButton1.TabIndex = 2;
+            label1.Text = "Login";
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkRed;
-            ClientSize = new Size(579, 750);
+            BackColor = Color.Gray;
+            ClientSize = new Size(507, 562);
             Controls.Add(label1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            HelpButton = true;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            Load += Login_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

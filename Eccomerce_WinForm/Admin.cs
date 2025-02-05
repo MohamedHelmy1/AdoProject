@@ -22,9 +22,7 @@ namespace Presentation
             this.categoryService = categoryService;
         }
 
-        public Admin()
-        {
-        }
+      
 
         private void Admin_Load(object sender, EventArgs e)
         {
@@ -33,8 +31,11 @@ namespace Presentation
            
             var categoryData = categoryService.getCategory();
             comboBox_Category.DataSource = categoryData;
-            comboBox_Category.ValueMember = "Ctg_Id";
-            comboBox_Category.DisplayMember = "Ctg_Name";
+            comboBox_Category.ValueMember = "CategoryId";
+            comboBox_Category.DisplayMember = "CategoryName";
+            btn_Edit.Visible = false;
+            btn_Delete.Visible = false;
+            btn_Add.Visible = true;
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -44,7 +45,7 @@ namespace Presentation
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("are you sure to delete this student", "confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("are you sure to delete this Product", "confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (productService.DeleteProduct(id) > 0)
                 {
@@ -53,6 +54,9 @@ namespace Presentation
                     textBox_name.Text = "";
                     numericUpDown_price.Text = "";
                     GetAllProducts();
+                    btn_Edit.Visible = false;
+                    btn_Delete.Visible = false;
+                    btn_Add.Visible = true;
                 }
                 else
                 {
@@ -71,6 +75,8 @@ namespace Presentation
         {
             var productData = productService.getProducts();
             dataGridView1.DataSource = productData;
+            dataGridView1.Columns["ProductId"].Visible = false;
+            dataGridView1.Columns["CategoryId"].Visible = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -123,6 +129,9 @@ namespace Presentation
                 textBox_name.Text = "";
                 numericUpDown_price.Text = "";
                 GetAllProducts();
+                btn_Edit.Visible = false;
+                btn_Delete.Visible = false;
+                btn_Add.Visible = true;
             }
             else
             {
@@ -135,17 +144,20 @@ namespace Presentation
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            id = (int)dataGridView1.SelectedRows[0].Cells[3].Value;
-            textBox_name.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            numericUpDown_price.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            comboBox_Category.SelectedItem = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+            textBox_name.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            numericUpDown_price.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            comboBox_Category.SelectedItem = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
 
+            btn_Edit.Visible = true;
+            btn_Delete.Visible = true;
+            btn_Add.Visible = false;
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
             this.Hide();
-          //  new Login().Show();
+            new Login().Show();
         }
 
         private void btn_Catigory_Click(object sender, EventArgs e)

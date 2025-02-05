@@ -19,7 +19,7 @@ namespace BLL
 
         public DataTable getProducts()
         {
-            return db.ExecuteQuery("SELECT P.*, C.CategoryName FROM Products P JOIN Categories C ON P.CategoryId = C.CategoryId");
+            return db.ExecuteQuery("SELECT P.*, C.CategoryName FROM Products P JOIN Categories C ON P.CategoryId = C.CategoryId  WHERE  p.IsDeleted=0 ");
         }
         public int DeleteProduct(int Id)
         {
@@ -31,17 +31,17 @@ namespace BLL
         }
         public int UpdateProduct(ProductVM productVM)
         {
-            return db.ExecuteNoQuery($"update Products set ProductName ='{productVM.Name}' ,Price='{productVM.Price}' , CategoryId={productVM.Ctg_Id} WHERE ProductId = {productVM.ID} ;");
+            return db.ExecuteNoQuery($"update Products set ProductName ='{productVM.Name}' ,Price='{productVM.Price}' , CategoryId={productVM.Ctg_Id} WHERE ProductId = {productVM.ID} And  IsDeleted=0 ;");
         }
 
         public DataTable getProductCategort(int CatogeryName)
         {
-            return db.ExecuteQuery($"SELECT * FROM Products WHERE CategoryId = {CatogeryName};");
+            return db.ExecuteQuery($"SELECT * FROM Products WHERE CategoryId = {CatogeryName}  and  IsDeleted=0;");
         }
        
         public DataTable getOneProduct(int Prod_Id)
         {
-            return db.ExecuteQuery($"SELECT P.*, C.CategoryName FROM Products P JOIN Categories C ON P.CategoryId = C.CategoryId where ProductId={Prod_Id}");
+            return db.ExecuteQuery($"SELECT P.*, C.CategoryName FROM Products P JOIN Categories C ON P.CategoryId = C.CategoryId where ProductId={Prod_Id} and  p.IsDeleted=0");
         }
        
     }

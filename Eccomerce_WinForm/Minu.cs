@@ -22,11 +22,18 @@ namespace Presentation
             InitializeComponent();
             userId = _userId;
             UserName = _UserName;
+            CatogeryServices catogery = new CatogeryServices();
+           
 
         }
 
         private void Minu_Load(object sender, EventArgs e)
         {
+            var productData = product.getProducts();
+            dgv.DataSource = productData;
+            //dgv.Columns["ProductId"].Visible = false;
+            //dgv.Columns["CategoryId"].Visible = false;
+            //dgv.Columns["IsDeleted"].Visible = false;
 
         }
 
@@ -51,9 +58,9 @@ namespace Presentation
         {
 
             productid = (int)dgv.SelectedRows[0].Cells["ProductId"].Value;
-            var productData = product.getOneProduct(productid);
-            Text_product.Text = productData.Rows[0]["ProductName"].ToString();
-            Text_Category.Text = productData.Rows[0]["CategoryId"].ToString();
+           
+            Text_product.Text = dgv.SelectedRows[0].Cells[1].Value.ToString();
+            
 
         }
 
@@ -65,21 +72,30 @@ namespace Presentation
         private void Button_Fav_Click(object sender, EventArgs e)
         {
             FavouriteServices favouriteServices = new FavouriteServices();
-            var productData = favouriteServices.AddProductFavourite(userId, productid);
-            if (productData > 0)
+            if (!favouriteServices.CheckFavProduct(userId, productid))
             {
-                MessageBox.Show("Product Added to Fav Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Text_product.Text = "";
-                Text_Category.Text = "";
+                var productData = favouriteServices.AddProductFavourite(userId, productid);
+                if (productData > 0)
+                {
+                    MessageBox.Show("Product Added to Fav Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Text_product.Text = "";
 
-                var Added = favouriteServices.getFavProduct(userId);
-                dgv.DataSource = Added;
 
+                    var Added = favouriteServices.getFavProduct(userId);
+                    dgv.DataSource = Added;
+
+                }
+                else
+                {
+                    MessageBox.Show("Error.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Error.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Product Added before", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
+           
         }
 
         private void guna2GradientTileButton1_Click(object sender, EventArgs e)
@@ -91,7 +107,17 @@ namespace Presentation
         private void guna2GradientTileButton2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new User(userId , UserName).Show();
+            new User(userId, UserName).Show();
+
+        }
+
+        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
