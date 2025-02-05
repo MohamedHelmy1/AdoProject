@@ -40,10 +40,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.DarkRed;
-            label1.Location = new Point(30, 41);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(26, 31);
             label1.Name = "label1";
-            label1.Size = new Size(197, 42);
+            label1.Size = new Size(158, 33);
             label1.TabIndex = 20;
             label1.Text = "Welcome,  ";
             // 
@@ -52,9 +52,10 @@
             btn_Minu.BackColor = Color.DarkRed;
             btn_Minu.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_Minu.ForeColor = Color.White;
-            btn_Minu.Location = new Point(143, 246);
+            btn_Minu.Location = new Point(125, 184);
+            btn_Minu.Margin = new Padding(3, 2, 3, 2);
             btn_Minu.Name = "btn_Minu";
-            btn_Minu.Size = new Size(265, 42);
+            btn_Minu.Size = new Size(232, 32);
             btn_Minu.TabIndex = 21;
             btn_Minu.Text = "Menu";
             btn_Minu.UseVisualStyleBackColor = false;
@@ -65,9 +66,10 @@
             btn_Fav.BackColor = Color.DarkRed;
             btn_Fav.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_Fav.ForeColor = Color.White;
-            btn_Fav.Location = new Point(143, 448);
+            btn_Fav.Location = new Point(125, 336);
+            btn_Fav.Margin = new Padding(3, 2, 3, 2);
             btn_Fav.Name = "btn_Fav";
-            btn_Fav.Size = new Size(265, 42);
+            btn_Fav.Size = new Size(232, 32);
             btn_Fav.TabIndex = 22;
             btn_Fav.Text = "Favourite";
             btn_Fav.UseVisualStyleBackColor = false;
@@ -86,24 +88,26 @@
             guna2GradientTileButton2.FillColor2 = Color.DarkGray;
             guna2GradientTileButton2.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2GradientTileButton2.ForeColor = Color.DarkRed;
-            guna2GradientTileButton2.Location = new Point(455, 41);
+            guna2GradientTileButton2.Location = new Point(398, 31);
+            guna2GradientTileButton2.Margin = new Padding(3, 2, 3, 2);
             guna2GradientTileButton2.Name = "guna2GradientTileButton2";
             guna2GradientTileButton2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GradientTileButton2.Size = new Size(79, 42);
+            guna2GradientTileButton2.Size = new Size(69, 32);
             guna2GradientTileButton2.TabIndex = 24;
             guna2GradientTileButton2.Text = ">";
             // 
             // User
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(579, 750);
+            BackColor = Color.Gray;
+            ClientSize = new Size(507, 562);
             Controls.Add(guna2GradientTileButton2);
             Controls.Add(btn_Fav);
             Controls.Add(btn_Minu);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "User";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User";
